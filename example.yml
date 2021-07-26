@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks:
+  - name: create an empty file
+    file:
+      path: "/home/app_bcsdev/testfile"
+      state: touch
+      mode: 0644
+    become: yes
+    become_method: sudo
+    become_user: app_bcsdev
